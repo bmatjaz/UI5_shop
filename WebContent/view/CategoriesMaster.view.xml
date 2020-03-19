@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.CategoriesMaster"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page
+        title="{i18n>categoriesMasterPageTitle}">
+        <List
+            items="{/Categories}">
+            <items>
+                <ObjectListItem
+                    title="{CategoryName}"
+                    type="Active"
+                    press="onListItemPress" />
+            </items>
+        </List>
+    </Page>
+</mvc:View>

@@ -67,6 +67,41 @@
 				"viewType": "XML",
 				"transition": "slide",
 				"async": true
+			},
+			"routes": [
+				{
+					"name": "categoriesMaster",
+					"pattern":"",
+					"target": "categoriesMaster"
+				},
+				{
+					"name": "productListDetail",
+					"pattern":"productList/:categoryID:",
+					"target": ["categoriesMaster", "productListDetail"]
+				},
+				{
+					
+					"name": "productDetails",
+					"pattern":"productList/:categoryID:/productDetails/:productID:",
+					"target": ["categoriesMaster", "productDetails"]
+				}
+			],
+			"targets":{
+				"categoriesMaster": {
+					"viewName": "CategoriesMaster",
+					"controlAggregation": "masterPages",
+					"viewLevel": 0
+				},
+				"productListDetail": {
+					"viewName": "ProductListDetail",
+					"controlAggregation": "detailPages",
+					"viewLevel": 0
+				},
+				"productDetails": {
+					"viewName": "ProductDetails",
+					"controlAggregation": "detailPages",
+					"viewLevel": 1
+				}
 			}
 		}
 	}

@@ -1,0 +1,33 @@
+<mvc:View
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	controllerName="sap.ui.demo.walkthrough.controller.ProductDetails"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+			<Page
+				title="Product Details"
+				showNavButton="true"
+				navButtonPress="onNavBack">
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="Product Details"	>
+							<f:content>
+								<Label text="Product ID" />
+								<Text text="{ProductID}" />
+								<Label text="Category ID" />
+								<Text text="{CategoryID}" />
+								<Label text="Product Name" />
+								<Text text="{ProductName}" />
+								<Label text="Product Quantity" />
+								<Text text="{QuantityPerUnit}" />
+								<Label text="Product Price" />
+								<Text text="{UnitPrice}" />
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+			</Page>
+</mvc:View>

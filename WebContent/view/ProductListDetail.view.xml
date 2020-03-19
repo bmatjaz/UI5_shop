@@ -1,0 +1,22 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.ProductListDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+    <Table id="productTable" items="{/Products}">
+        <columns>
+            <Column>
+                <Label text="Product name" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem
+                type="Navigation"
+                press=".getProductDetails">
+                <cells>
+                    <Text text="{ProductName}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>
