@@ -16,15 +16,15 @@
 							layout="ResponsiveGridLayout"
 							title="Product Details"	>
 							<f:content>
-								<Label text="Product ID" />
+								<Label text="{i18n>productId}" />
 								<Text text="{ProductID}" />
-								<Label text="Category ID" />
+								<Label text="{i18n>categoryId}" />
 								<Text text="{CategoryID}" />
-								<Label text="Product Name" />
+								<Label text="{i18n>productName}" />
 								<Text text="{ProductName}" />
-								<Label text="Product Quantity" />
+								<Label text="{i18n>productQuantity}" />
 								<Text text="{QuantityPerUnit}" />
-								<Label text="Product Price" />
+								<Label text="{i18n>productUnitPrice}" />
 								<Text text="{UnitPrice}" />
 							</f:content>
 						</f:SimpleForm>

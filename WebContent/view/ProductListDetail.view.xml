@@ -6,7 +6,16 @@
     <Table id="productTable" items="{/Products}">
         <columns>
             <Column>
-                <Label text="Product name" />
+                <Label text="{i18n>productName}" />
+            </Column>
+            <Column>
+                <Label text="{i18n>categoryId}" />
+            </Column>
+            <Column>
+                <Label text="{i18n>productId}" />
+            </Column>
+            <Column>
+                <Label />
             </Column>
         </columns>
         <items>
@@ -15,6 +24,9 @@
                 press=".getProductDetails">
                 <cells>
                     <Text text="{ProductName}" />
+                    <Text text="{CategoryID}" />
+                    <Text text="{ProductID}" />
+                    <Button icon="sap-icon://cart-3" text="{i18n>addToCart}" press=".addItemToCart" />
                 </cells>
             </ColumnListItem>
         </items>

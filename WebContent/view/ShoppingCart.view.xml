@@ -1,0 +1,29 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.ShoppingCart"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" >
+
+	<Page
+		id="page"
+		title="{i18n>shoppingCartTitle}"
+		backgroundDesign="Solid"
+		showNavButton="{appView>/smallScreenMode}">
+		<content>
+			<List
+				delete="handleDelete"
+				mode="Delete"
+				items="{cartProducts>/cartEntries}">
+				<items>
+					<ObjectListItem
+						intro="{cartProducts>Quantity} x"
+						title="{cartProducts>ProductName}"
+						type="Active"
+						press="pressTest">
+						
+					</ObjectListItem>
+				</items>
+				<!--<Button text="delete" press="" /> -->
+			</List>
+		</content>
+	</Page>
+</mvc:View>

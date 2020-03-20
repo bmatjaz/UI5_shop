@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/Text"
-], function (Controller, Text) {
+	"../model/cart"
+], function (Controller, cart) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.walkthrough.controller.ProductListDetail", {
@@ -18,17 +18,20 @@ sap.ui.define([
 			var oBindingInfo = {
 				path: "/Categories(" + this.categoryId + ")/Products",
 				template: oTemplate,
-			
 			};
 			_oTable.bindAggregation("items", oBindingInfo);
-		},
-		onPressTemplate: function(oEvent) {
-			console.log("tadaaaa");
 		},
 		getProductDetails: function(oEvent) {
 			var sProductId = oEvent.getSource().getBindingContext().getProperty("ProductID");
 			this.oRouter.navTo("productDetails",
 					{categoryID:this.categoryId, productID: sProductId });
+		},
+		addItemToCart: function(oEvent) {
+			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+			var oProduct = oEvent.getSource().getBindingContext().getObject();
+			var oCartModel = this.getView().getModel("cartProducts");			
+			cart.addToCart(oResourceBundle, oProduct, oCartModel);
+			
 		}
 	});
 

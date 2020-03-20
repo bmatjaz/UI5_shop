@@ -84,6 +84,11 @@
 					"name": "productDetails",
 					"pattern":"productList/:categoryID:/productDetails/:productID:",
 					"target": ["categoriesMaster", "productDetails"]
+				},
+				{
+					"name": "shoppingCart",
+					"pattern":"shoppingCart",
+					"target": ["categoriesMaster", "shoppingCart"]
 				}
 			],
 			"targets":{
@@ -101,6 +106,10 @@
 					"viewName": "ProductDetails",
 					"controlAggregation": "detailPages",
 					"viewLevel": 1
+				},
+				"shoppingCart": {
+					"viewName": "ShoppingCart",
+					"controlAggregation": "detailPages"
 				}
 			}
 		}
