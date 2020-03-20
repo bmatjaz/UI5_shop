@@ -16,6 +16,16 @@ sap.ui.define([
         goToShoppingCart: function() {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.navTo("shoppingCart");
+        },
+        changeLanguageDE: function() {
+            var language = window.navigator.userLanguage || window.navigator.language;
+            var sCurrentLocale = sap.ui.getCore().getConfiguration().getLanguage();
+
+            if( sCurrentLocale == language)
+                sap.ui.getCore().getConfiguration().setLanguage("de");
+            else
+                sap.ui.getCore().getConfiguration().setLanguage(language);
+            
         }
 	});
 });

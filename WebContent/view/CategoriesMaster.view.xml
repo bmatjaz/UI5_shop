@@ -6,6 +6,7 @@
         title="{i18n>categoriesMasterPageTitle}">
         <headerContent>
 			<Button icon="sap-icon://cart" tooltip="Cart" press=".goToShoppingCart" />
+            <Button text="DE" tooltip="Language toggle" press=".changeLanguageDE" />
 		</headerContent>
         <List
             items="{/Categories}">
