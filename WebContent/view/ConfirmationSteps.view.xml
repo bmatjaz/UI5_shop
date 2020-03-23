@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.ConfirmationSteps"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page
+        title="{i18n>confirmationStepsTitle}">
+        <headerContent>
+			<Button icon="sap-icon://cart" tooltip="Cart" press=".goToShoppingCart" />
+            <Button text="DE" tooltip="Language toggle" press=".changeLanguageDE" />
+		</headerContent>
+        <List>
+            <items>
+                <ObjectListItem
+                    title="Step 1: Overview"
+                    type="Active"
+                    press="onListItemPress" />
+                <ObjectListItem
+                    title="Step 2: Delivery address"
+                    type="Active"
+                    press="onListItemPress" />
+                <ObjectListItem
+                    title="Step 3: Payment"
+                    type="Active"
+                    press="onListItemPress" />
+                <ObjectListItem
+                    title="Step 4: Final confirmation"
+                    type="Active"
+                    press="onListItemPress" />
+            </items>
+        </List>
+    </Page>
+</mvc:View>

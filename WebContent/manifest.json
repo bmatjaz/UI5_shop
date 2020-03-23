@@ -89,6 +89,26 @@
 					"name": "shoppingCart",
 					"pattern":"shoppingCart",
 					"target": ["categoriesMaster", "shoppingCart"]
+				},
+				{
+					"name": "overview",
+					"pattern":"overview",
+					"target": ["overview", "confirmationSteps"]
+				},
+				{
+					"name": "addressinput",
+					"pattern":"addressinput",
+					"target": ["addressinput", "confirmationSteps"]
+				},
+				{
+					"name": "payment",
+					"pattern":"payment",
+					"target": ["payment", "confirmationSteps"]
+				},
+				{
+					"name": "finalConfirmation",
+					"pattern":"finalConfirmation",
+					"target": ["finalConfirmation", "confirmationSteps"]
 				}
 			],
 			"targets":{
@@ -110,6 +130,31 @@
 				"shoppingCart": {
 					"viewName": "ShoppingCart",
 					"controlAggregation": "detailPages"
+				},
+				"confirmationSteps": {
+					"viewName": "ConfirmationSteps",
+					"controlAggregation": "masterPages",
+					"viewLevel": 1
+				},
+				"overview": {
+					"viewName": "Overview",
+					"controlAggregation": "detailPages",
+					"viewLevel": 0
+				},
+				"addressinput": {
+					"viewName": "Addressinput",
+					"controlAggregation": "detailPages",
+					"viewLevel": 1
+				},
+				"payment": {
+					"viewName": "Payment",
+					"controlAggregation": "detailPages",
+					"viewLevel": 2
+				},
+				"finalConfirmation": {
+					"viewName": "FinalConfirmation",
+					"controlAggregation": "detailPages",
+					"viewLevel": 3
 				}
 			}
 		}

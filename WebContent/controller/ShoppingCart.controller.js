@@ -35,6 +35,10 @@ sap.ui.define([
 					oCartModel.setProperty("/" + sCartEntries, Object.assign({}, oCollectionEntries));
 				}
 			});
+		},
+		goToOverviewPage: function() {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("overview");
 		}
 	});
 });

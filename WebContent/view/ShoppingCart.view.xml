@@ -7,6 +7,9 @@
 		title="{i18n>shoppingCartTitle}"
 		backgroundDesign="Solid"
 		showNavButton="{appView>/smallScreenMode}">
+		<headerContent>
+			<Button text="{i18n>orderOverviewPage}" tooltip="Clear all filters" press=".goToOverviewPage"/>
+		</headerContent>
 		<content>
 			<List
 				delete="handleDelete"
