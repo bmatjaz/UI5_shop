@@ -38,35 +38,6 @@ sap.ui.define([
 			oCartModel.setProperty("/cartEntries", Object.assign({}, oCollectionEntries));
 			oCartModel.refresh(true);
 			MessageToast.show(oBundle.getText("productMsgAddedToCart", [oProductToBeAdded.ProductName] ));
-		},
-
-		/**
-		 * Function that updates the cart model when a product is added to the cart.
-		 * If the product is already in the cart the quantity is increased.
-		 * If not, the product is added to the cart with quantity 1.
-		 * @private
-		 * @param {Object} oBundle i18n bundle
-		 * @param {Object} oProductToBeAdded Product that is added to the cart
-		 * @param {Object} oCartModel Cart model
-		 */
-		_updateCartItem: function (oBundle, oProductToBeAdded, oCartModel) {
-			// find existing entry for product
-			var oCollectionEntries = Object.assign({}, oCartModel.getData()["cartEntries"]);
-			var oCartEntry =  oCollectionEntries[oProductToBeAdded.ProductID];
-
-			if (oCartEntry === undefined) {
-				// create new entry
-				oCartEntry = Object.assign({}, oProductToBeAdded);
-				oCartEntry.Quantity = 1;
-				oCollectionEntries[oProductToBeAdded.ProductID] = oCartEntry;
-			} else {
-				// update existing entry
-				oCartEntry.Quantity += 1;
-			}
-			//update the cart model
-			oCartModel.setProperty("/cartEntries", Object.assign({}, oCollectionEntries));
-			oCartModel.refresh(true);
-			MessageToast.show(oBundle.getText("productMsgAddedToCart", [oProductToBeAdded.ProductName] ));
 		}
 	};
 });

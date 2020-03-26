@@ -18,9 +18,6 @@ sap.ui.define([
 				var oProduct = oCartEntries[ProductID];
 				fTotalPrice += parseFloat(oProduct.UnitPrice) * oProduct.Quantity;
 			});
-			console.log("formatter ne izpise cene")
-			console.log(fTotalPrice)
-			console.log(formatter.price(fTotalPrice))
 			return oBundle.getText("cartTotalPrice", formatter.price(fTotalPrice));
 		},
 		/**
