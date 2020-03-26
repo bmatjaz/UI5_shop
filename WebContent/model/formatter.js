@@ -21,7 +21,7 @@ sap.ui.define([
 			console.log("formatter ne izpise cene")
 			console.log(fTotalPrice)
 			console.log(formatter.price(fTotalPrice))
-			return oBundle.getText("cartTotalPrice", [formatter.price(fTotalPrice)]);
+			return oBundle.getText("cartTotalPrice", formatter.price(fTotalPrice));
 		},
 		/**
 		 * Formats the price

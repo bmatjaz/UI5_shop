@@ -19,7 +19,7 @@
 					text="{
 						path : 'cartProducts>/cartEntries',
 						formatter : '.formatter.totalPrice'
-					} EUR"/>
+					} EUR" />
 				<ToolbarSpacer/>
 			</Toolbar>
 		</footer>
