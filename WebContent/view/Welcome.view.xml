@@ -7,21 +7,8 @@
 		title="{i18n>welcomePageTitle}"
 		backgroundDesign="Solid"
 		showNavButton="{appView>/smallScreenMode}">
-		<footer>
-			<Bar id="summaryFooterBar">
-				<contentRight>
-					<Button
-						id="submitOrder"
-						type="Accept"
-						text="I AGREE"
-						press=".handleWizardSubmit"></Button>
-					<Button
-						id="cancelOrder"
-						type="Reject"
-						text="Nope"
-						press=".handleWizardCancel"></Button>
-				</contentRight>
-			</Bar>
-		</footer>
+		<Text text="1: order form does not start from step 1 until hard refresh of page." />
+		<Text text="2: sum of price does not show in cart but it is calculated" />
+		<Text text="" />
 	</Page>
 </mvc:View>
