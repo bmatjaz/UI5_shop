@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="sap.ui.demo.walkthrough.controller.ShoppingCart"
+	controllerName="sap.ui.demo.walkthrough.controller.Welcome"
 	xmlns:mvc="sap.ui.core.mvc" 
 	xmlns="sap.m">
 	<Page
@@ -7,8 +7,16 @@
 		title="{i18n>welcomePageTitle}"
 		backgroundDesign="Solid"
 		showNavButton="{appView>/smallScreenMode}">
-		<Text text="1: order form does not start from step 1 until hard refresh of page." />
-		<Text text="2: sum of price does not show in cart but it is calculated" />
-		<Text text="" />
+		<Carousel 
+			class="sapUiContentPadding" 
+			loop="true"
+			showPageIndicator="false"
+			height="30%">
+		<pages>
+			<Image src="https://cdn.pixabay.com/photo/2016/11/23/15/14/shelf-1853439_960_720.jpg" width="100%" height="100%"/>
+			<Image src="https://cdn.pixabay.com/photo/2016/03/23/19/38/shopping-cart-1275480_960_720.jpg" width="100%" height="100%"/>
+			<Image src="https://cdn.pixabay.com/photo/2016/11/22/19/24/archive-1850170_960_720.jpg" width="100%" height="100%"/>
+		</pages>
+	</Carousel>
 	</Page>
 </mvc:View>

@@ -32,6 +32,14 @@ sap.ui.define([
 			var oCartModel = this.getView().getModel("cartProducts");			
 			cart.addToCart(oResourceBundle, oProduct, oCartModel);
 			
+		},
+		toCart: function() {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("shoppingCart");
+		},
+		toHome: function() {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("categoriesMaster");
 		}
 	});
 

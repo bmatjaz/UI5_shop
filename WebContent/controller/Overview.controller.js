@@ -14,8 +14,6 @@ sap.ui.define([
 			var oModel = new JSONModel(
 				{
 					SelectedPayment: "Credit Card",
-					SelectedDeliveryMethod: "Standard Delivery",
-					DifferentDeliveryAddress: false,
 					CashOnDelivery: {
 						FirstName: "",
 						LastName: "",
@@ -224,8 +222,6 @@ sap.ui.define([
 						
 						var oModelData = oModel.getData();
 						oModelData.SelectedPayment = "Credit Card";
-						oModelData.SelectedDeliveryMethod = "Standard Delivery";
-						oModelData.DifferentDeliveryAddress = false;
 						oModelData.CashOnDelivery = {};
 						oModelData.InvoiceAddress = {};
 						oModelData.DeliveryAddress = {};
@@ -237,6 +233,7 @@ sap.ui.define([
 						oCartModelData.totalPrice = 0;
 						oCartModel.setData(oCartModelData);
 						this.getOwnerComponent().getRouter().navTo("categoriesMaster");
+						location.reload();
 					}
 				}.bind(this)
 			});

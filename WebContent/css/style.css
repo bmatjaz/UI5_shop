@@ -10,3 +10,7 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 	display: inline-block;
 	font-weight: bold;
 }
+
+.carouselSize {
+	height: "25%";
+}
