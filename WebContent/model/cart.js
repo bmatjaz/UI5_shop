@@ -38,6 +38,6 @@ sap.ui.define([
 			oCartModel.setProperty("/cartEntries", Object.assign({}, oCollectionEntries));
 			oCartModel.refresh(true);
 			MessageToast.show(oBundle.getText("productMsgAddedToCart", [oProductToBeAdded.ProductName] ));
-		}
+		} 
 	};
 });
