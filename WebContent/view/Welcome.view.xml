@@ -1,0 +1,27 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.ShoppingCart"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m">
+	<Page
+		id="page"
+		title="{i18n>welcomePageTitle}"
+		backgroundDesign="Solid"
+		showNavButton="{appView>/smallScreenMode}">
+		<footer>
+			<Bar id="summaryFooterBar">
+				<contentRight>
+					<Button
+						id="submitOrder"
+						type="Accept"
+						text="I AGREE"
+						press=".handleWizardSubmit"></Button>
+					<Button
+						id="cancelOrder"
+						type="Reject"
+						text="Nope"
+						press=".handleWizardCancel"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

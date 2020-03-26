@@ -5,7 +5,6 @@ sap.ui.define([
 
 	return Controller.extend("sap.ui.demo.walkthrough.controller.CategoriesMaster", {
         onInit : function () {
-			
         },
         onListItemPress: function(oEvent) {
             var sCategoryId = oEvent.getSource().getBindingContext().getProperty("CategoryID");

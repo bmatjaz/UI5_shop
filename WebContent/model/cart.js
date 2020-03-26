@@ -16,12 +16,28 @@ sap.ui.define([
 		 * @param {Object} oProduct Product that is added to the cart
 		 * @param {Object} oCartModel Cart model
 		 */
-		addToCart: function (oBundle, oProduct, oCartModel) {
+		addToCart: function (oBundle, oProductToBeAdded, oCartModel) {
 			// Items to be added from the welcome view have it's content inside product object
-			if (oProduct.Product !== undefined) {
-				oProduct = oProduct.Product;
+			if (oProductToBeAdded.Product !== undefined) {
+				oProductToBeAdded = oProductToBeAdded.Product;
 			}
-			this._updateCartItem(oBundle, oProduct, oCartModel);
+			// find existing entry for product
+			var oCollectionEntries = Object.assign({}, oCartModel.getData()["cartEntries"]);
+			var oCartEntry =  oCollectionEntries[oProductToBeAdded.ProductID];
+
+			if (oCartEntry === undefined) {
+				// create new entry
+				oCartEntry = Object.assign({}, oProductToBeAdded);
+				oCartEntry.Quantity = 1;
+				oCollectionEntries[oProductToBeAdded.ProductID] = oCartEntry;
+			} else {
+				// update existing entry
+				oCartEntry.Quantity += 1;
+			}
+			//update the cart model
+			oCartModel.setProperty("/cartEntries", Object.assign({}, oCollectionEntries));
+			oCartModel.refresh(true);
+			MessageToast.show(oBundle.getText("productMsgAddedToCart", [oProductToBeAdded.ProductName] ));
 		},
 
 		/**

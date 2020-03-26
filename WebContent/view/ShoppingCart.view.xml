@@ -6,10 +6,23 @@
 		id="page"
 		title="{i18n>shoppingCartTitle}"
 		backgroundDesign="Solid"
-		showNavButton="{appView>/smallScreenMode}">
+		showNavButton="true"
+		navButtonText="Back to first page"
+		navButtonPress=".goToFirstPage">
 		<headerContent>
-			<Button text="{i18n>orderOverviewPage}" tooltip="Clear all filters" press=".goToOverviewPage"/>
+			<Button text="{i18n>orderOverviewPage}" tooltip="Buy items" press=".goToOverviewPage"/>
 		</headerContent>
+		<footer>
+			<Toolbar>
+				<Text
+					id="totalPriceText"
+					text="{
+						path : 'cartProducts>/cartEntries',
+						formatter : '.formatter.totalPrice'
+					} EUR"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</footer>
 		<content>
 			<List
 				delete="handleDelete"
@@ -18,10 +31,10 @@
 				<items>
 					<ObjectListItem
 						intro="{cartProducts>Quantity} x"
-						title="{cartProducts>ProductName}"
-						type="Active"
-						press="pressTest">
-						
+						title="{cartProducts>ProductName}">
+						<firstStatus>
+							<ObjectStatus text="{cartProducts>UnitPrice} EUR" />
+						</firstStatus>
 					</ObjectListItem>
 				</items>
 				<!--<Button text="delete" press="" /> -->

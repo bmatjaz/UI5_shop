@@ -3,8 +3,6 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
-	<Shell>
-		<SplitApp id="app">
-		</SplitApp>
-	</Shell>
+	<SplitApp id="splitApp">
+	</SplitApp>
 </mvc:View>

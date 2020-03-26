@@ -32,7 +32,7 @@
 			"viewName": "sap.ui.demo.walkthrough.view.App",
 			"type": "XML",
 			"async": true,
-			"id": "app"
+			"id": "splitApp"
 		},
 		"dependencies": {
 			"minUI5Version": "1.60",
@@ -63,7 +63,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewPath": "sap.ui.demo.walkthrough.view",
-				"controlId": "app",
+				"controlId": "splitApp",
 				"viewType": "XML",
 				"transition": "slide",
 				"async": true
@@ -72,7 +72,7 @@
 				{
 					"name": "categoriesMaster",
 					"pattern":"",
-					"target": "categoriesMaster"
+					"target": ["categoriesMaster", "welcome"]
 				},
 				{
 					"name": "productListDetail",
@@ -88,33 +88,23 @@
 				{
 					"name": "shoppingCart",
 					"pattern":"shoppingCart",
-					"target": ["categoriesMaster", "shoppingCart"]
+					"target": ["shoppingCart", "categoriesMaster"]
 				},
 				{
 					"name": "overview",
 					"pattern":"overview",
-					"target": ["overview", "confirmationSteps"]
-				},
-				{
-					"name": "addressinput",
-					"pattern":"addressinput",
-					"target": ["addressinput", "confirmationSteps"]
-				},
-				{
-					"name": "payment",
-					"pattern":"payment",
-					"target": ["payment", "confirmationSteps"]
-				},
-				{
-					"name": "finalConfirmation",
-					"pattern":"finalConfirmation",
-					"target": ["finalConfirmation", "confirmationSteps"]
+					"target": ["overview", "categoriesMaster"]
 				}
 			],
 			"targets":{
 				"categoriesMaster": {
 					"viewName": "CategoriesMaster",
 					"controlAggregation": "masterPages",
+					"viewLevel": 0
+				},
+				"welcome": {
+					"viewName": "Welcome",
+					"controlAggregation": "detailPages",
 					"viewLevel": 0
 				},
 				"productListDetail": {
@@ -129,32 +119,13 @@
 				},
 				"shoppingCart": {
 					"viewName": "ShoppingCart",
-					"controlAggregation": "detailPages"
-				},
-				"confirmationSteps": {
-					"viewName": "ConfirmationSteps",
-					"controlAggregation": "masterPages",
+					"controlAggregation": "detailPages",
 					"viewLevel": 1
 				},
 				"overview": {
 					"viewName": "Overview",
 					"controlAggregation": "detailPages",
-					"viewLevel": 0
-				},
-				"addressinput": {
-					"viewName": "Addressinput",
-					"controlAggregation": "detailPages",
 					"viewLevel": 1
-				},
-				"payment": {
-					"viewName": "Payment",
-					"controlAggregation": "detailPages",
-					"viewLevel": 2
-				},
-				"finalConfirmation": {
-					"viewName": "FinalConfirmation",
-					"controlAggregation": "detailPages",
-					"viewLevel": 3
 				}
 			}
 		}

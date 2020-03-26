@@ -1,0 +1,4 @@
+1. skrih master go res v cart in ga vrni ko gres nazaj na glavno stran
+2. pravilna izbira placila
+3. prenos podatkov na koncni pregled narocila
+4. izprazni vozicek po koncu

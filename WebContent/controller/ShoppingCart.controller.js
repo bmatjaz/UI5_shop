@@ -1,13 +1,16 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageBox"
-], function (Controller, MessageBox) {
+	"sap/m/MessageBox",
+	"../model/formatter",
+], function (Controller, MessageBox, formatter) {
     "use strict";
     
     var sCartModelName = "cartProducts";
 	var sCartEntries = "cartEntries";
 
 	return Controller.extend("sap.ui.demo.walkthrough.controller.ShoppingCart", {
+		formatter: formatter,
+		
 		onInit : function () {
 
         },
@@ -39,6 +42,10 @@ sap.ui.define([
 		goToOverviewPage: function() {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("overview");
+		},
+		goToFirstPage: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("categoriesMaster");
 		}
 	});
 });
