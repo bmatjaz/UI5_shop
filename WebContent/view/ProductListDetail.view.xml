@@ -36,8 +36,8 @@
         <footer>
             <Bar id="summaryFooterBar">
                 <contentRight>
-                    <Button icon="sap-icon://cart" text="To cart" press=".toCart" />
-                    <Button icon="sap-icon://home" text="Home" press=".toHome" />
+                    <Button icon="sap-icon://cart" text="{i18n>toCartText}" press=".toCart" />
+                    <Button icon="sap-icon://home" text="{i18n>homeText}" press=".toHome" />
                 </contentRight>
             </Bar>
         </footer>

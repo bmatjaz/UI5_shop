@@ -7,14 +7,13 @@
 	xmlns:f="sap.ui.layout.form"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 			<Page
-				title="Product Details"
+				title="{i18n>productDetailsPageTitle}"
 				showNavButton="true"
 				navButtonPress="onNavBack">
 					<VBox class="sapUiSmallMargin">
 						<f:SimpleForm
 							editable="true"
-							layout="ResponsiveGridLayout"
-							title="Product Details"	>
+							layout="ResponsiveGridLayout">
 							<f:content>
 								<Label text="{i18n>productId}" />
 								<Text text="{ProductID}" />

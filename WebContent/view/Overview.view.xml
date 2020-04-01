@@ -9,9 +9,9 @@
 		<pages>
 			<Page
 				id="overviewWizard"
-				title="Ordering procedure"
+				title="{i18n>orderingProcedureTitle}"
 				showNavButton="true"
-				navButtonText="Back to cart"
+				navButtonText="{i18n>backToCartText}"
 				navButtonPress=".onPressMasterBack">
 				<content>
 					<Wizard 
@@ -22,13 +22,10 @@
 						<steps>
 							<WizardStep
 								id="paymentTypeStep"
-								title="Select payment method"
+								title="{i18n>selectPaymentMethod}"
 								subsequentSteps="creditCardStep, bankAccountStep, cashOnDeliveryStep"
 								complete="goToPaymentStep"
 								icon="sap-icon://money-bills">
-								<Text
-									class="sapUiSmallMarginBottom"
-									text="Some text"/>
 								<HBox
 									renderType="Bare"
 									alignItems="Center"
@@ -42,22 +39,22 @@
 											<SegmentedButtonItem
 												id="payViaCC"
 												key="Credit Card"
-												text="Credit card"/>
+												text="{i18n>creditCard}"/>
 											<SegmentedButtonItem
 												id="payViaBank"
 												key="Bank Transfer"
-												text="Bank transfer"/>
+												text="{i18n>bankTransfer}"/>
 											<SegmentedButtonItem
 												id="payViaCOD"
 												key="Cash on Delivery"
-												text="Cash on delivery"/>
+												text="{i18n>cashOnDelivery}"/>
 										</items>
 									</SegmentedButton>
 								</HBox>
 							</WizardStep>
 							<WizardStep
 								id="creditCardStep"
-								title="Pay with credit card"
+								title="{i18n>payWithCreditCardTitle}"
 								nextStep="invoiceStep"
 								activate=".onCheckStepActivation"
 								icon="sap-icon://credit-card"
@@ -67,7 +64,7 @@
 									layout="ResponsiveGridLayout">
 									<Label
 										labelFor="creditCardHolderName"
-										text="Credit card holder name"
+										text="{i18n>ccHolderName}"
 										required="true">
 										<layoutData>
 											<layout:GridData span="XL4 L4 M4 S12"/>
@@ -75,12 +72,12 @@
 									</Label>
 									<Input
 										id="creditCardHolderName"
-										placeholder="Write credit card holder name"
+										placeholder="{i18n>ccHolderNamePlaceholder}"
 										value="{
 											path: '/CreditCard/Name',
 											type: 'sap.ui.model.type.String',
 											constraints: {
-												minLength: 3,
+												minLength: 2,
 												search: '^[a-zA-Z]+[\\s]?[a-zA-Z]+$'
 											}
 										}"
@@ -90,7 +87,7 @@
 										</layoutData>
 									</Input>
 									<Label
-										text="Credit card number"
+										text="{i18n>ccNumber}"
 										labelFor="creditCardNumber"
 										required="true">
 										<layoutData>
@@ -99,7 +96,7 @@
 									</Label>
 									<MaskInput
 										id="creditCardNumber"
-										placeholder="Write credit card number"
+										placeholder="{i18n>ccNumberPlaceholder}"
 										mask = "CCCC-CCCC-CCCC-CCCC"
 										placeholderSymbol = "_"
 										value="{
@@ -121,7 +118,7 @@
 										</layoutData>
 									</MaskInput>
 									<Label
-										text="Credit card security number"
+										text="{i18n>ccSecurityNumber}"
 										labelFor="creditCardSecurityNumber"
 										required="true">
 										<layoutData>
@@ -130,7 +127,7 @@
 									</Label>
 									<MaskInput
 										id="creditCardSecurityNumber"
-										placeholder="Write credit card security number"
+										placeholder="{i18n>ccSecurityNumberPlaceholder}"
 										mask = "CCC"
 										placeholderSymbol = "_"
 										value="{
@@ -151,7 +148,7 @@
 											<layout:GridData span="XL8 L8 M8 S12"/>
 										</layoutData>
 									</MaskInput>
-									<Label text="Credit card expiration date">
+									<Label text="{i18n>ccExpirationDate}">
 										<layoutData>
 											<layout:GridData span="XL4 L4 M4 S12"/>
 										</layoutData>
@@ -178,7 +175,7 @@
 							</WizardStep>
 							<WizardStep
 								id="bankAccountStep"
-								title="Bank accout step"
+								title="{i18n>bankAccountStepTitle}"
 								nextStep="invoiceStep"
 								icon="sap-icon://official-service">
 								<Panel>
@@ -186,23 +183,23 @@
 										defaultSpan="L6 M6 S10"
 										hSpacing="2">
 										<Label
-											text="Bank accout name"
+											text="{i18n>bankAccountName}"
 											design="Bold"/>
-										<Label text="TOTALY LEGIT BANK"/>
+										<Label text="Bank account"/>
 										<Label
-											text="Bank name"
+											text="{i18n>bankName}"
 											design="Bold"/>
-										<Label text="STIL LEGIT BANK" />
+										<Label text="YESBANK" />
 										<Label
-											text="Bank account number"
+											text="{i18n>bankAccountNumber}"
 											design="Bold"/>
-										<Label text="LEGITBANKNUMBER"/>
+										<Label text="1903812380123"/>
 									</layout:Grid>
 								</Panel>
 							</WizardStep>
 							<WizardStep
 								id="cashOnDeliveryStep"
-								title="Cash on delivery"
+								title="{i18n>cashOnDeliveryTitle}"
 								nextStep="invoiceStep"
 								activate=".onCheckStepActivation"
 								icon="sap-icon://money-bills"
@@ -211,7 +208,7 @@
 									editable="true"
 									layout="ResponsiveGridLayout">
 									<Label
-										text="First name"
+										text="{i18n>codName}"
 										required="true"
 										labelFor="cashOnDeliveryName">
 										<layoutData>
@@ -220,7 +217,7 @@
 									</Label>
 									<Input
 										id="cashOnDeliveryName"
-										placeholder="Write your first name"
+										placeholder="{i18n>codNamePlaceholder}"
 										value="{
 											path: '/CashOnDelivery/FirstName',
 											type: 'sap.ui.model.type.String',
@@ -234,7 +231,7 @@
 										</layoutData>
 									</Input>
 									<Label
-										text="Last name"
+										text="{i18n>codLastName}"
 										labelFor="cashOnDeliveryLastName"
 										required="true">
 										<layoutData>
@@ -243,7 +240,7 @@
 									</Label>
 									<Input
 										id="cashOnDeliveryLastName"
-										placeholder="Write your last name"
+										placeholder="{i18n>codLastNamePlaceholder}"
 										value="{
 											path: '/CashOnDelivery/LastName',
 											type: 'sap.ui.model.type.String',
@@ -257,7 +254,7 @@
 										</layoutData>
 									</Input>
 									<Label
-										text="Phone number"
+										text="{i18n>codPhoneNumer}"
 										labelFor="cashOnDeliveryPhoneNumber"
 										required="true">
 										<layoutData>
@@ -266,7 +263,7 @@
 									</Label>
 									<Input
 										id="cashOnDeliveryPhoneNumber"
-										placeholder="Write your phone number"
+										placeholder="{i18n>codPhoneNumberPlaceholder}"
 										value="{
 											path: '/CashOnDelivery/PhoneNumber',
 											type: 'sap.ui.model.type.String',
@@ -280,7 +277,7 @@
 										</layoutData>
 									</Input>
 									<Label
-										text="Email address"
+										text="{i18n>codEmail}"
 										labelFor="cashOnDeliveryEmail"
 										required="true">
 										<layoutData>
@@ -289,7 +286,7 @@
 									</Label>
 									<Input
 										id="cashOnDeliveryEmail"
-										placeholder="exapmple@mail.com"
+										placeholder="{i18n>codEmailPlaceholder}"
 										value="{
 											path: '/CashOnDelivery/Email',
 											type: '.types.email'
@@ -303,7 +300,7 @@
 							</WizardStep>
 							<WizardStep
 								id="invoiceStep"
-								title="Delivery address"
+								title="{i18n>deliveryAddressTitle}"
 								activate=".onCheckStepActivation"
 								complete="invoiceAddressComplete"
 								icon="sap-icon://sales-quote"
@@ -312,7 +309,7 @@
 									layout="ResponsiveGridLayout"
 									editable="true">
 									<Label
-										text="Name"
+										text="{i18n>daName}"
 										required="true"
 										labelFor="invoiceAddressAddress">
 										<layoutData>
@@ -321,7 +318,7 @@
 									</Label>
 									<Input
 										id="invoiceAddressAddress"
-										placeholder="Name"
+										placeholder="{i18n>daNamePlaceholder}"
 										value="{
 											path: '/InvoiceAddress/Address',
 											type: 'sap.ui.model.type.String',
@@ -336,7 +333,7 @@
 										</layoutData>
 									</Input>
 									<Label
-										text="Address"
+										text="{i18n>daAddress}"
 										required="true"
 										labelFor="invoiceAddressCity">
 										<layoutData>
@@ -345,7 +342,7 @@
 									</Label>
 									<Input
 										id="invoiceAddressCity"
-										placeholder="City"
+										placeholder="{i18n>daAddressPlaceholder}"
 										value="{
 											path: '/InvoiceAddress/City',
 											type: 'sap.ui.model.type.String',
@@ -360,7 +357,7 @@
 										</layoutData>
 									</Input>
 									<Label
-										text="ZIP"
+										text="{i18n>daZip}"
 										required="true"
 										labelFor="invoiceAddressZip">
 										<layoutData>
@@ -370,7 +367,7 @@
 									<Input
 										id="invoiceAddressZip"
 										type="Number"
-										placeholder="ZIP code"
+										placeholder="{i18n>daZipPlaceholder}"
 										value="{
 											path: '/InvoiceAddress/ZipCode',
 											type: 'sap.ui.model.type.String',
@@ -385,7 +382,7 @@
 										</layoutData>
 									</Input>
 									<Label
-										text="Country"
+										text="{i18n>daCountry}"
 										required="true"
 										labelFor="invoiceAddressCountry">
 										<layoutData>
@@ -394,7 +391,7 @@
 									</Label>
 									<Input
 										id="invoiceAddressCountry"
-										placeholder="Country"
+										placeholder="{i18n>daCountryPlaceholder}"
 										value="{
 											path: '/InvoiceAddress/Country',
 											type: 'sap.ui.model.type.String',
@@ -424,7 +421,7 @@
 							<Toolbar id="toolbarProductList">
 								<Title
 									id="checkoutItems"
-									text="Order details"
+									text="{i18n>orderDetails}"
 									level="H2"
 									titleStyle="H4"/>
 								<ToolbarSpacer/>
@@ -433,7 +430,7 @@
 						<content>
 							<List
 								id="summaryEntryList"
-								noDataText="Its empty"
+								noDataText="{i18n>emptyListText}"
 								items="{
 									path : 'cartProducts>/cartEntries',
 									sorter : {
@@ -465,7 +462,7 @@
 							<Toolbar id="toolbarPayment">
 								<Title
 									id="toolbarPaymentTitle"
-									text="Payment information"
+									text="{i18n>paymentInformation}"
 									level="H2"
 									titleStyle="H4"/>
 								<ToolbarSpacer/>
@@ -473,7 +470,7 @@
 							</Toolbar>
 						</form:toolbar>
 						<form:content>
-							<Label text="Payment"/>
+							<Label text="{i18n>payment}"/>
 							<Text text="{/SelectedPayment}"/>
 						</form:content>
 					</form:SimpleForm>
@@ -487,7 +484,7 @@
 							<Toolbar id="toolbarCreditCard">
 								<Title
 									id="creditCardPaymentTitle"
-									text="Credit card details"
+									text="{i18n>ccDetails}"
 									level="H2"
 									titleStyle="H4"/>
 								<ToolbarSpacer/>
@@ -495,13 +492,13 @@
 							</Toolbar>
 						</form:toolbar>
 						<form:content>
-							<Label text="Name"/>
+							<Label text="{i18n>ccHolderName}"/>
 							<Text text="{/CreditCard/Name}"/>
-							<Label text="Credit card number"/>
+							<Label text="{i18n>ccNumber}"/>
 							<Text text="{/CreditCard/CardNumber}"/>
-							<Label text="CCV"/>
+							<Label text="{i18n>ccSecurityNumber}"/>
 							<Text text="{/CreditCard/SecurityCode}"/>
-							<Label text="Expiration"/>
+							<Label text="{i18n>ccExpirationDate}"/>
 							<Text text="{/CreditCard/Expire}"/>
 						</form:content>
 					</form:SimpleForm>
@@ -513,17 +510,17 @@
 						layout="ResponsiveGridLayout">
 						<form:content>
 							<Label
-								text="Bank name"
+								text="{i18n>bankAccountName}"
 								design="Bold"/>
-							<Text text="REALY GREAT BANK"/>
+							<Text text="Bank account name"/>
 							<Label
-								text="Bank something else"
+								text="{i18n>bankName}"
 								design="Bold"/>
-							<Text text="GREAT BANK"/>
+							<Text text="BANKBANK"/>
 							<Label
-								text="send money here"
+								text="{i18n>bankAccountNumber}"
 								design="Bold"/>
-							<Text text="YEP"/>
+							<Text text="3456435634"/>
 						</form:content>
 					</form:SimpleForm>
 					<form:SimpleForm
@@ -535,25 +532,25 @@
 							<Toolbar id="toolbarCOD">
 								<Title
 									id="cashOnDeliveryTitle"
-									text="cash on delivery"
+									text="{i18n>cashOnDeliveryTitle}"
 									level="H2"
 									titleStyle="H4"/>
 								<ToolbarSpacer/>
 							</Toolbar>
 						</form:toolbar>
 						<form:content>
-							<Label text="First name"/>
+							<Label text="{i18n>codName}"/>
 							<Text text="{/CashOnDelivery/FirstName}"/>
-							<Label text="Last name"/>
+							<Label text="{i18n>codLastName}"/>
 							<Text text="{/CashOnDelivery/LastName}"/>
-							<Label text="Phone number"/>
+							<Label text="{i18n>codPhoneNumer}"/>
 							<Text text="{/CashOnDelivery/PhoneNumber}"/>
-							<Label text="Email"/>
+							<Label text="{i18n>codEmail}"/>
 							<Text text="{/CashOnDelivery/Email}"/>
 						</form:content>
 					</form:SimpleForm>
 					<form:SimpleForm
-							title=""
+							title="{i18n>deliveryAddressTitle}"
 							editable="false"
 							layout="ResponsiveGridLayout"
 							ariaLabelledBy="invoiceAddressTitle">
@@ -568,13 +565,13 @@
 							</Toolbar>
 						</form:toolbar>
 						<form:content>
-							<Label text="Name"/>
+							<Label text="{i18n>daName}"/>
 							<Text text="{/InvoiceAddress/Address}"/>
-							<Label text="City"/>
+							<Label text="{i18n>daAddress}"/>
 							<Text text="{/InvoiceAddress/City}"/>
-							<Label text="ZIP" />
+							<Label text="{i18n>daZip}" />
 							<Text text="{/InvoiceAddress/ZipCode}"/>
-							<Label text="Country"/>
+							<Label text="{i18n>daCountry}"/>
 							<Text text="{/InvoiceAddress/Country}"/>
 						</form:content>
 					</form:SimpleForm>
@@ -586,12 +583,12 @@
 							<Button
 								id="submitOrder"
 								type="Accept"
-								text="I AGREE"
+								text="{i18n>agreeText}"
 								press=".handleWizardSubmit"></Button>
 							<Button
 								id="cancelOrder"
 								type="Reject"
-								text="Nope"
+								text="{i18n>cancelText}"
 								press=".handleWizardCancel"></Button>
 						</contentRight>
 					</Bar>

@@ -81,7 +81,8 @@ sap.ui.define([
 		 */
 		setPaymentMethod: function () {
 			this._setDiscardableProperty({
-				message: "U MAD BRO",
+				message: this.getView().getModel("i18n")
+					.getResourceBundle().getText("messageForPaymentMethodChange"),
 				discardStep: this.getView().byId("paymentTypeStep"),
 				modelPath: "/SelectedPayment",
 				historyPath: "prevPaymentSelect"
@@ -125,7 +126,7 @@ sap.ui.define([
 		 * Validates the cash on delivery step initially and after each input
 		 */
 		checkCashOnDeliveryStep: function () {
-			this._checkStep("cashOnDeliveryStep", []);
+			this._checkStep("cashOnDeliveryStep", ["invoiceAddressAddress"]);
 		},
 		/**
 		 * Validates the invoice step initially and after each input

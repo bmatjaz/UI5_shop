@@ -7,10 +7,10 @@
 		title="{i18n>shoppingCartTitle}"
 		backgroundDesign="Solid"
 		showNavButton="true"
-		navButtonText="Back to first page"
+		navButtonText="{i18n>toFirstPage}"
 		navButtonPress=".goToFirstPage">
 		<headerContent>
-			<Button text="{i18n>orderOverviewPage}" tooltip="Buy items" press=".goToOverviewPage"/>
+			<Button text="{i18n>orderOverviewPage}" tooltip="{i18n>buyItemsTooltip}" press=".goToOverviewPage"/>
 		</headerContent>
 		<footer>
 			<Toolbar>
