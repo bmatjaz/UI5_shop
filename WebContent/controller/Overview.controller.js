@@ -47,6 +47,11 @@ sap.ui.define([
 		onPressMasterBack: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("shoppingCart");
+
+			// resets Wizard
+			var oWizard = this.getView().byId("shoppingCartWizard");
+			this._navToWizardStep(this.byId("paymentTypeStep"));
+			oWizard.discardProgress(oWizard.getSteps()[0]);
 		},
 		goToDeliveryAddress: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -215,9 +220,11 @@ sap.ui.define([
 					if (oAction === MessageBox.Action.YES) {
 						// resets Wizard
 						var oWizard = this.getView().byId("shoppingCartWizard");
+						this._navToWizardStep(this.byId("paymentTypeStep"));
 						oWizard.discardProgress(oWizard.getSteps()[0]);
 
 						var oModel = this.getView().getModel();
+						
 						var oCartModel = this.getOwnerComponent().getModel("cartProducts");
 						
 						var oModelData = oModel.getData();
@@ -233,11 +240,26 @@ sap.ui.define([
 						oCartModelData.totalPrice = 0;
 						oCartModel.setData(oCartModelData);
 						this.getOwnerComponent().getRouter().navTo("categoriesMaster");
-						location.reload();
 					}
 				}.bind(this)
 			});
 		},
+		/**
+		 * navigates to WizardStep
+		 * @private
+		 * @param {Object} oStep WizardStep DOM element
+		 */
+		_navToWizardStep: function (oStep) {
+			var oNavContainer = this.byId("wizardNavContainer");
+			var _fnAfterNavigate = function () {
+				this.byId("shoppingCartWizard").goToStep(oStep);
+				// detaches itself after navigaton
+				oNavContainer.detachAfterNavigate(_fnAfterNavigate);
+			}.bind(this);
+
+			oNavContainer.attachAfterNavigate(_fnAfterNavigate);
+			oNavContainer.to(this.byId("overviewWizard"));
+		}
 
 	});
 });

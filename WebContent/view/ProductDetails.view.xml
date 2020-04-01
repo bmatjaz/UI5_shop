@@ -25,7 +25,10 @@
 								<Label text="{i18n>productQuantity}" />
 								<Text text="{QuantityPerUnit}" />
 								<Label text="{i18n>productUnitPrice}" />
-								<Text text="{UnitPrice}" />
+								<Text text="{
+										path : 'UnitPrice',
+										formatter : '.formatter.price'
+									} EUR" />
 							</f:content>
 						</f:SimpleForm>
 					</VBox>

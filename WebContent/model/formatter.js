@@ -5,6 +5,7 @@ sap.ui.define([
 	"use strict";
 
 	var formatter = {
+
 		/**
 		 * Sums up the price for all products in the cart
 		 * @param {object} oCartEntries current cart entries

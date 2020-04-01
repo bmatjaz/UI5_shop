@@ -8,6 +8,7 @@
 	<NavContainer id="wizardNavContainer">
 		<pages>
 			<Page
+				id="overviewWizard"
 				title="Ordering procedure"
 				showNavButton="true"
 				navButtonText="Back to cart"
@@ -325,7 +326,7 @@
 											path: '/InvoiceAddress/Address',
 											type: 'sap.ui.model.type.String',
 											constraints: {
-												minLength: 4,
+												minLength: 2,
 												search: '^[a-zA-Z-]+\\.?\\s?[0-9a-zA-Z\\s]*$'
 											}
 										}"
@@ -368,6 +369,7 @@
 									</Label>
 									<Input
 										id="invoiceAddressZip"
+										type="Number"
 										placeholder="ZIP code"
 										value="{
 											path: '/InvoiceAddress/ZipCode',

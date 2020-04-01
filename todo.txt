@@ -1,0 +1,14 @@
+povecanje stevila artiklov v cart (tex pa dva gumba +- )
+oznacba pri napacnem vnosu
+i18 za stevilke.
+keine daten namesto no data
+vse preko i18n
+
+
+
+done
+validacija imena naj bo 2 karakterja
+zip code sam stevilke
+ko gres nazaj v shop naj se koraki za nakup zacnejo znova isto po koncu. - urejenmo kadar kliknes back to cart
+formater pri stevilki.
+gumb za jezik se spremeni

@@ -33,7 +33,10 @@
 						intro="{cartProducts>Quantity} x"
 						title="{cartProducts>ProductName}">
 						<firstStatus>
-							<ObjectStatus text="{cartProducts>UnitPrice} EUR" />
+							<ObjectStatus text="{
+								path : 'cartProducts>UnitPrice',
+								formatter : '.formatter.price'
+							} EUR" />
 						</firstStatus>
 					</ObjectListItem>
 				</items>

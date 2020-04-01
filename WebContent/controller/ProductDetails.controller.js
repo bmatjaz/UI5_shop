@@ -1,10 +1,12 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/core/routing/History"
-], function(Controller, History) {
+	"sap/ui/core/routing/History",
+	"../model/formatter",
+], function(Controller, History, formatter) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.walkthrough.controller.ProductDetails", {
+		formatter: formatter,
 
 		onInit : function () {
 			this.getOwnerComponent().getRouter().getRoute("productDetails").attachPatternMatched(this._onRouteMatched, this);
