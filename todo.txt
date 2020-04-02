@@ -1,7 +1,6 @@
 povecanje stevila artiklov v cart (tex pa dva gumba +- )
-oznacba pri napacnem vnosu
 i18 za stevilke.
-Payment succesfull
+
 
 
 done
@@ -12,3 +11,5 @@ formater pri stevilki.
 gumb za jezik se spremeni
 keine daten namesto no data
 vse preko i18n
+oznacba pri napacnem vnosu - prblizno dela
+Payment succesfull

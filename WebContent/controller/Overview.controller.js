@@ -135,26 +135,6 @@ sap.ui.define([
 			this._checkStep("invoiceStep", ["invoiceAddressAddress", "invoiceAddressCity", "invoiceAddressZip", "invoiceAddressCountry"]);
 		},
 		/**
-		 * Checks if one or more of the inputs are empty
-		 * @param {array} aInputIds - Input ids to be checked
-		 * @returns {boolean}
-		 * @private
-		 */
-		_checkInputFields : function (aInputIds) {
-			var oView = this.getView();
-			
-			return aInputIds.some(function (sInputId) {
-				var oInput = oView.byId(sInputId);
-				var oBinding = oInput.getBinding("value");
-				try {
-					oBinding.getType().validateValue(oInput.getValue());
-				} catch (oException) {
-					return true;
-				}
-				return false;
-			});
-		},
-		/**
 		 * Hides button to proceed to next WizardStep if validation conditions are not fulfilled
 		 * @param {string} sStepName - the ID of the step to be checked
 		 * @param {array} aInputIds - Input IDs to be checked
@@ -172,6 +152,29 @@ sap.ui.define([
 				oWizard.invalidateStep(oStep);
 			}
 		},
+		/**
+		 * Checks if one or more of the inputs are empty
+		 * @param {array} aInputIds - Input ids to be checked
+		 * @returns {boolean}
+		 * @private
+		 */
+		_checkInputFields : function (aInputIds) {
+			var oView = this.getView();			
+			return aInputIds.some(function (sInputId) {
+				var oInput = oView.byId(sInputId);
+				var oBinding = oInput.getBinding("value");
+				try {
+					oBinding.getType().validateValue(oInput.getValue());
+					oInput.setValueState("None");
+				} catch (oException) {
+					oInput.setValueState("Error");
+					return true;
+				}
+				return false;
+			});
+		},
+		
+		
 		/**
 		 * Called from both <code>setPaymentMethod</code> and <code>setDifferentDeliveryAddress</code> functions.
 		 * Shows warning message if user changes previously selected choice
@@ -240,7 +243,7 @@ sap.ui.define([
 						oCartModelData.cartEntries = {};
 						oCartModelData.totalPrice = 0;
 						oCartModel.setData(oCartModelData);
-						this.getOwnerComponent().getRouter().navTo("categoriesMaster");
+						this.getOwnerComponent().getRouter().navTo("orderConfirmation");
 					}
 				}.bind(this)
 			});

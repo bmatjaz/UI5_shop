@@ -9,9 +9,6 @@
 		showNavButton="true"
 		navButtonText="{i18n>toFirstPage}"
 		navButtonPress=".goToFirstPage">
-		<headerContent>
-			<Button text="{i18n>orderOverviewPage}" tooltip="{i18n>buyItemsTooltip}" press=".goToOverviewPage"/>
-		</headerContent>
 		<footer>
 			<Toolbar>
 				<Text
@@ -21,6 +18,7 @@
 						formatter : '.formatter.totalPrice'
 					} EUR" />
 				<ToolbarSpacer/>
+					<Button type="Emphasized" text="{i18n>orderOverviewPage}" tooltip="{i18n>buyItemsTooltip}" press=".goToOverviewPage"/>
 			</Toolbar>
 		</footer>
 		<content>

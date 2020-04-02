@@ -1,0 +1,20 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.OrderConfirmation"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true">
+    <Page>
+        <Text text="Order completed successfully" />
+        <footer>
+			<Toolbar>
+				<Button 
+                    type="Emphasized"
+                    text="{i18n>toFirstPage}" 
+                    tooltip="{i18n>toFirstPage}" 
+                    press=".goToFirstPage" 
+                    ariaDescribedBy="defaultButtonDescription genericButtonDescription"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</footer>
+    </Page>
+</mvc:View>

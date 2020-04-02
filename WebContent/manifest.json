@@ -94,6 +94,11 @@
 					"name": "overview",
 					"pattern":"overview",
 					"target": ["overview", "categoriesMaster"]
+				},
+				{
+					"name": "orderConfirmation",
+					"pattern":"orderConfirmation",
+					"target": ["orderConfirmation", "categoriesMaster"]
 				}
 			],
 			"targets":{
@@ -124,6 +129,11 @@
 				},
 				"overview": {
 					"viewName": "Overview",
+					"controlAggregation": "detailPages",
+					"viewLevel": 1
+				},
+				"orderConfirmation": {
+					"viewName": "OrderConfirmation",
 					"controlAggregation": "detailPages",
 					"viewLevel": 1
 				}
