@@ -1,11 +1,14 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
-	"sap/m/MessageBox"
-], function (Controller, JSONModel, MessageBox) {
+	"sap/m/MessageBox",
+	"../model/formatter",
+], function (Controller, JSONModel, MessageBox, formatter) {
 	"use strict";
 
 	return Controller.extend("sap.ui.demo.walkthrough.controller.Overview", {
+		formatter: formatter,
+		
         onInit : function () {
 			this._oHistory = {
 				prevPaymentSelect: null,

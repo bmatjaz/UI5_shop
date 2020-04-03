@@ -443,8 +443,9 @@
 										intro="{cartProducts>Quantity} x"
 										title="{cartProducts>ProductName}"
 										number="{
-											path : 'cartProducts>UnitPrice'
-										}"
+											path : 'cartProducts>UnitPrice',
+											formatter : '.formatter.price'
+										} EUR" 
 										numberUnit="EUR"
 										press=".onEntryListPress"
 										iconDensityAware="false">

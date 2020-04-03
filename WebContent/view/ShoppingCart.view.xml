@@ -9,7 +9,8 @@
 		showNavButton="true"
 		navButtonText="{i18n>toFirstPage}"
 		navButtonPress=".goToFirstPage">
-		<footer>
+		<footer
+			id="shoppingCartFooter">
 			<Toolbar>
 				<Text
 					id="totalPriceText"
@@ -21,25 +22,39 @@
 					<Button type="Emphasized" text="{i18n>orderOverviewPage}" tooltip="{i18n>buyItemsTooltip}" press=".goToOverviewPage"/>
 			</Toolbar>
 		</footer>
-		<content>
-			<List
-				delete="handleDelete"
-				mode="Delete"
-				items="{cartProducts>/cartEntries}">
-				<items>
-					<ObjectListItem
-						intro="{cartProducts>Quantity} x"
-						title="{cartProducts>ProductName}">
-						<firstStatus>
-							<ObjectStatus text="{
+		<Table id="productTable" items="{cartProducts>/cartEntries}">
+			<columns>
+				<Column>
+					<Label text="{i18n>productName}" />
+				</Column>
+				<Column>
+					<Label text="{i18n>categoryId}" />
+				</Column>
+				<Column>
+					<Label text="{i18n>productId}" />
+				</Column>
+				<Column>
+					<Label />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text 
+						text="{cartProducts>Quantity} x 
+							{
 								path : 'cartProducts>UnitPrice',
 								formatter : '.formatter.price'
-							} EUR" />
-						</firstStatus>
-					</ObjectListItem>
-				</items>
-				<!--<Button text="delete" press="" /> -->
-			</List>
-		</content>
+							} EUR 
+							{cartProducts>ProductName}" />
+						<Text text="{cartProducts>CategoryID}" />
+						<Text text="{cartProducts>ProductID}" />
+						<StepInput
+							value="{cartProducts>Quantity}"
+							change="onChange"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>

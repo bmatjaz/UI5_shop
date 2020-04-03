@@ -46,6 +46,10 @@ sap.ui.define([
 		goToFirstPage: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("categoriesMaster");
+		},
+
+		onChange: function() {
+
 		}
 	});
 });
