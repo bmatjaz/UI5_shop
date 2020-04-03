@@ -162,7 +162,7 @@ sap.ui.define([
 		 * @private
 		 */
 		_checkInputFields : function (aInputIds) {
-			var oView = this.getView();			
+			var oView = this.getView();
 			return aInputIds.some(function (sInputId) {
 				var oInput = oView.byId(sInputId);
 				var oBinding = oInput.getBinding("value");

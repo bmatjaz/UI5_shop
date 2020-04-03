@@ -15,9 +15,9 @@
 				<Text
 					id="totalPriceText"
 					text="{
-						path : 'cartProducts>/cartEntries',
-						formatter : '.formatter.totalPrice'
-					} EUR" />
+						path: '/totalPriceInShoppingCart',
+						formatter: '.formatter.price'
+						} EUR" />
 				<ToolbarSpacer/>
 					<Button type="Emphasized" text="{i18n>orderOverviewPage}" tooltip="{i18n>buyItemsTooltip}" press=".goToOverviewPage"/>
 			</Toolbar>
@@ -36,6 +36,9 @@
 				<Column>
 					<Label />
 				</Column>
+				<Column>
+					<Label />
+				</Column>
 			</columns>
 			<items>
 				<ColumnListItem>
@@ -49,9 +52,12 @@
 							{cartProducts>ProductName}" />
 						<Text text="{cartProducts>CategoryID}" />
 						<Text text="{cartProducts>ProductID}" />
+						
+						<Button icon="sap-icon://delete" text="{i18n>deleteFromCart}"  press=".delete"/>
+						
 						<StepInput
 							value="{cartProducts>Quantity}"
-							change="onChange"/>
+							change=".totalPrice"/>
 					</cells>
 				</ColumnListItem>
 			</items>

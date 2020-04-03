@@ -14,7 +14,6 @@ sap.ui.define([
 			this.categoryId = oEvent.getParameter("arguments").categoryID;
 			var _oTable = this.getView().byId("productTable");
 			var oTemplate = _oTable.getBindingInfo("items").template;
-
 			var oBindingInfo = {
 				path: "/Categories(" + this.categoryId + ")/Products",
 				template: oTemplate,
@@ -29,6 +28,7 @@ sap.ui.define([
 		addItemToCart: function(oEvent) {
 			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
 			var oProduct = oEvent.getSource().getBindingContext().getObject();
+			console.log(oEvent)
 			var oCartModel = this.getView().getModel("cartProducts");			
 			cart.addToCart(oResourceBundle, oProduct, oCartModel);
 			
