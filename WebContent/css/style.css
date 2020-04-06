@@ -11,6 +11,6 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 	font-weight: bold;
 }
 
-.carouselSize {
-	height: "25%";
+.totalText {
+	font-weight: bold;
 }

@@ -13,10 +13,17 @@ sap.ui.define([
 		formatter: formatter,
 		
 		onInit : function () {
+
+			this._oRouter = this.getOwnerComponent().getRouter();
+			this._oRouter.getRoute("shoppingCart").attachPatternMatched(this._onObjectMatched, this);
+			
 			var oModel = new JSONModel({
 					totalPriceInShoppingCart: 0
 				})
 			this.getView().setModel(oModel);
+			//this.totalPrice();
+		},
+		_onObjectMatched: function() {
 			this.totalPrice();
 		},
 		goToOverviewPage: function() {
@@ -62,7 +69,8 @@ sap.ui.define([
 
 					// update model
 					oCartModel.setProperty("/" + sCartEntries, Object.assign({}, oCollectionEntries));
-				}
+					this.totalPrice();
+				}.bind(this)
 			});
 		}
 	});

@@ -14,7 +14,8 @@
 			<Toolbar>
 				<Text
 					id="totalPriceText"
-					text="{
+					class="totalText"
+					text="Total: {
 						path: '/totalPriceInShoppingCart',
 						formatter: '.formatter.price'
 						} EUR" />
@@ -52,12 +53,10 @@
 							{cartProducts>ProductName}" />
 						<Text text="{cartProducts>CategoryID}" />
 						<Text text="{cartProducts>ProductID}" />
-						
-						<Button icon="sap-icon://delete" text="{i18n>deleteFromCart}"  press=".delete"/>
-						
 						<StepInput
 							value="{cartProducts>Quantity}"
 							change=".totalPrice"/>
+						<Button icon="sap-icon://delete" text="{i18n>deleteFromCart}" press=".delete"/>
 					</cells>
 				</ColumnListItem>
 			</items>

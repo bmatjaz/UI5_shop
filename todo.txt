@@ -1,15 +1,10 @@
-povecanje stevila artiklov v cart (tex pa dva gumba +- )
-i18 za stevilke.
-
-
+zadnja stran (wizzard) - dodaj total in spremeni list da ne bo debev
+Dodaj jezike v dropdown menu
+home v nogi dodaj na vrh strani
+korak cc dodaj v validacijo se ostale 3 polja
+detajl produkta (moznost da dodas artikel v kosarico)
+dodaj nogo na vse strani
 
 done
-validacija imena naj bo 2 karakterja
-zip code sam stevilke
-ko gres nazaj v shop naj se koraki za nakup zacnejo znova isto po koncu. - urejenmo kadar kliknes back to cart
-formater pri stevilki.
-gumb za jezik se spremeni
-keine daten namesto no data
-vse preko i18n
-oznacba pri napacnem vnosu - prblizno dela
-Payment succesfull
+zamenjaj gumb delete in +- gumb v kosarici
+dodaj napis Total v kosarici pri skupni

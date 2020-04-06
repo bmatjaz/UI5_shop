@@ -28,7 +28,6 @@ sap.ui.define([
 		addItemToCart: function(oEvent) {
 			var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
 			var oProduct = oEvent.getSource().getBindingContext().getObject();
-			console.log(oEvent)
 			var oCartModel = this.getView().getModel("cartProducts");			
 			cart.addToCart(oResourceBundle, oProduct, oCartModel);
 			
