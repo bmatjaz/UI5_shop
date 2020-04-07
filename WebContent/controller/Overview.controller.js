@@ -211,7 +211,7 @@ sap.ui.define([
 		 */
 		handleWizardSubmit: function () {
 			var sText = "Are you shure?";
-			this._handleSubmitOrCancel(sText, "confirm", "ordercompleted");
+			this._handleSubmitOrCancel(sText, "confirm", "orderConfirmation");
 		},
 		/**
 		 * Called from <code>ordersummary</code>
@@ -248,7 +248,7 @@ sap.ui.define([
 						oCartModelData.cartEntries = {};
 						oCartModelData.totalPrice = 0;
 						oCartModel.setData(oCartModelData);
-						this.getOwnerComponent().getRouter().navTo("orderConfirmation");
+						this.getOwnerComponent().getRouter().navTo(sRoute);
 					}
 				}.bind(this)
 			});
