@@ -439,19 +439,21 @@
 								}
 							 }">
 								<items>
-									<ObjectListItem
-										intro="{cartProducts>Quantity} x"
-										title="{cartProducts>ProductName}"
-										number="{
+									<StandardListItem 
+										title="{cartProducts>Quantity} x {cartProducts>ProductName}"
+										info="{
 											path : 'cartProducts>UnitPrice',
 											formatter : '.formatter.price'
-										} EUR" 
-										numberUnit="EUR"
-										press=".onEntryListPress"
-										iconDensityAware="false">
-									</ObjectListItem>
+										} EUR"  />
 								</items>
 							</List>
+							<Text
+								id="totalPriceText"
+								class="totalText"
+								text="Total: {
+									path: '/totalPriceInShoppingCart',
+									formatter: '.formatter.price'
+									} EUR" />
 						</content>
 					</Panel>
 

@@ -42,10 +42,12 @@ sap.ui.define([
 						CardNumber: "",
 						SecurityCode: "",
 						Expire: ""
-					}
+					},
+					totalPriceInShoppingCart: 0
 				}
 			);
 			this.getView().setModel(oModel);
+			this.totalPrice();
 		},
 		onPressMasterBack: function () {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -123,13 +125,13 @@ sap.ui.define([
 		 * Validates the credit card step initially and after each input
 		 */
 		checkCreditCardStep: function () {
-			this._checkStep("creditCardStep", ["creditCardHolderName"]);
+			this._checkStep("creditCardStep", ["creditCardHolderName", "creditCardNumber", "creditCardSecurityNumber", "creditCardExpirationDate"]);
 		},
 		/**
 		 * Validates the cash on delivery step initially and after each input
 		 */
 		checkCashOnDeliveryStep: function () {
-			this._checkStep("cashOnDeliveryStep", ["invoiceAddressAddress"]);
+			this._checkStep("cashOnDeliveryStep", ["cashOnDeliveryName" , "cashOnDeliveryLastName", "cashOnDeliveryPhoneNumber"]);
 		},
 		/**
 		 * Validates the invoice step initially and after each input
@@ -266,7 +268,19 @@ sap.ui.define([
 
 			oNavContainer.attachAfterNavigate(_fnAfterNavigate);
 			oNavContainer.to(this.byId("overviewWizard"));
-		}
+		},
+		totalPrice: function() {
+			var oCartModel = this.getOwnerComponent().getModel("cartProducts").getData().cartEntries;
+			var totalPrice = 0;
+			
+			for (var key in oCartModel) {
+				totalPrice += oCartModel[key].Quantity * oCartModel[key].UnitPrice
+			}
+			var oModel = this.getView().getModel();
+			var oModelData = oModel.getData();
+			oModelData.totalPriceInShoppingCart = totalPrice;
+			oModel.setData(oModelData);
+		},
 
 	});
 });

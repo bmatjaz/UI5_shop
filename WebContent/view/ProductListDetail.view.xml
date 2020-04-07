@@ -3,8 +3,12 @@
     xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
 	xmlns="sap.m">
-     <Page>
-       <Table id="productTable" items="{/Products}">
+     <Page 
+        title="{i18n>productsListTitle}">
+        <headerContent>
+            <Button icon="sap-icon://home" text="{i18n>homeText}" press=".toHome" />
+        </headerContent>
+        <Table id="productTable" items="{/Products}">
         <columns>
             <Column>
                 <Label text="{i18n>productName}" />
@@ -37,7 +41,6 @@
             <Bar id="summaryFooterBar">
                 <contentRight>
                     <Button icon="sap-icon://cart" text="{i18n>toCartText}" press=".toCart" />
-                    <Button icon="sap-icon://home" text="{i18n>homeText}" press=".toHome" />
                 </contentRight>
             </Bar>
         </footer>

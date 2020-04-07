@@ -10,6 +10,7 @@
 		title="{i18n>productDetailsPageTitle}"
 		showNavButton="true"
 		navButtonPress="onNavBack">
+		
 		<VBox class="sapUiSmallMargin">
 			<f:SimpleForm
 				editable="true"
