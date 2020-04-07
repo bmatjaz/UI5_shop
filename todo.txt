@@ -1,5 +1,4 @@
 zadnja stran (wizzard) - dodaj total in spremeni list da ne bo debev
-Dodaj jezike v dropdown menu
 home v nogi dodaj na vrh strani
 korak cc dodaj v validacijo se ostale 3 polja
 detajl produkta (moznost da dodas artikel v kosarico)
@@ -8,3 +7,4 @@ dodaj nogo na vse strani
 done
 zamenjaj gumb delete in +- gumb v kosarici
 dodaj napis Total v kosarici pri skupni
+Dodaj jezike v dropdown menu

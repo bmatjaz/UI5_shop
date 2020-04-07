@@ -16,15 +16,17 @@ sap.ui.define([
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.navTo("shoppingCart");
         },
-        changeLanguageDE: function() {
-            var language = window.navigator.userLanguage || window.navigator.language;
-            var sCurrentLocale = sap.ui.getCore().getConfiguration().getLanguage();
+        changeLanguage: function(oEvent) {
+            var oValidatedComboBox = oEvent.getSource(),
+            sSelectedKey = oValidatedComboBox.getSelectedKey(),
+            language = window.navigator.userLanguage || window.navigator.language;
 
-            if( sCurrentLocale == language)
-                sap.ui.getCore().getConfiguration().setLanguage("de");
-            else
+            if(sSelectedKey=="default") {
                 sap.ui.getCore().getConfiguration().setLanguage(language);
-            
+            }
+            else {
+                sap.ui.getCore().getConfiguration().setLanguage(sSelectedKey);
+            }
         }
 	});
 });
