@@ -414,7 +414,10 @@
 			<Page
 				id="summaryPage"
 				backgroundDesign="Solid"
-				showHeader="false">
+				showHeader="false"
+				showNavButton="true"
+				navButtonText="{i18n>toFirstPage}"
+				navButtonPress=".goToFirstPage">
 				<content>
 					<Panel>
 						<headerToolbar>
@@ -581,20 +584,27 @@
 
 				</content>
 				<footer>
-					<Bar id="summaryFooterBar">
-						<contentRight>
-							<Button
-								id="submitOrder"
-								type="Accept"
-								text="{i18n>agreeText}"
-								press=".handleWizardSubmit"></Button>
-							<Button
-								id="cancelOrder"
-								type="Reject"
-								text="{i18n>cancelText}"
-								press=".handleWizardCancel"></Button>
-						</contentRight>
-					</Bar>
+					<Toolbar>
+						<Button
+							id="backToCart"
+							type="Emphasized"
+							text="{i18n>backToCartText}"
+							press=".onPressMasterBack">
+						</Button>
+						<ToolbarSpacer/>
+						<Button
+							id="submitOrder"
+							type="Accept"
+							text="{i18n>agreeText}"
+							press=".handleWizardSubmit">
+						</Button>
+						<Button
+							id="cancelOrder"
+							type="Reject"
+							text="{i18n>cancelText}"
+							press=".handleWizardCancel">
+						</Button>
+					</Toolbar>
 				</footer>
 			</Page>
 		</pages>
