@@ -6,30 +6,37 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-			<Page
-				title="{i18n>productDetailsPageTitle}"
-				showNavButton="true"
-				navButtonPress="onNavBack">
-					<VBox class="sapUiSmallMargin">
-						<f:SimpleForm
-							editable="true"
-							layout="ResponsiveGridLayout">
-							<f:content>
-								<Label text="{i18n>productId}" />
-								<Text text="{ProductID}" />
-								<Label text="{i18n>categoryId}" />
-								<Text text="{CategoryID}" />
-								<Label text="{i18n>productName}" />
-								<Text text="{ProductName}" />
-								<Label text="{i18n>productQuantity}" />
-								<Text text="{QuantityPerUnit}" />
-								<Label text="{i18n>productUnitPrice}" />
-								<Text text="{
-										path : 'UnitPrice',
-										formatter : '.formatter.price'
-									} EUR" />
-							</f:content>
-						</f:SimpleForm>
-					</VBox>
-			</Page>
+	<Page
+		title="{i18n>productDetailsPageTitle}"
+		showNavButton="true"
+		navButtonPress="onNavBack">
+		<VBox class="sapUiSmallMargin">
+			<f:SimpleForm
+				editable="true"
+				layout="ResponsiveGridLayout">
+				<f:content>
+					<Label text="{i18n>productId}" />
+					<Text text="{ProductID}" />
+					<Label text="{i18n>categoryId}" />
+					<Text text="{CategoryID}" />
+					<Label text="{i18n>productName}" />
+					<Text text="{ProductName}" />
+					<Label text="{i18n>productQuantity}" />
+					<Text text="{QuantityPerUnit}" />
+					<Label text="{i18n>productUnitPrice}" />
+					<Text text="{
+							path : 'UnitPrice',
+							formatter : '.formatter.price'
+						} EUR" />
+				</f:content>
+			</f:SimpleForm>
+		</VBox>
+		<footer
+			id="productDetailFooter">
+			<Toolbar>
+				<ToolbarSpacer/>
+					<Button type="Emphasized" text="{i18n>addToCart}" tooltip="{i18n>addToCart}" press=".addToCart"/>
+			</Toolbar>
+		</footer>
+	</Page>
 </mvc:View>

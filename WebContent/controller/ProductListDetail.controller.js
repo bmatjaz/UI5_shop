@@ -30,7 +30,6 @@ sap.ui.define([
 			var oProduct = oEvent.getSource().getBindingContext().getObject();
 			var oCartModel = this.getView().getModel("cartProducts");			
 			cart.addToCart(oResourceBundle, oProduct, oCartModel);
-			
 		},
 		toCart: function() {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
